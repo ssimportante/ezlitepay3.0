@@ -1,0 +1,7 @@
+{
+  "name": "Remix be-ezlitepay-app",
+  "description": "HR and Employee Management System",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

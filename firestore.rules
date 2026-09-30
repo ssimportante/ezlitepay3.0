@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAppAdmin() {
+      return get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.isAdmin == true;
+    }
+
+    // Unauthenticated public read access for kiosk functionality
+    match /companySettings/main {
+      allow read: if true;
+      allow write: if isAppAdmin();
+    }
+    
+    match /employees/{employeeId} {
+      allow read: if true;
+      allow write: if isAppAdmin();
+      
+      // Subcollections also need rules
+      match /{allSubcollections=**} {
+        allow read: if true;
+        allow write: if isAppAdmin();
+      }
+    }
+    
+    match /timeLogEvents/{eventId} {
+      allow read: if true;
+      // Allow any client (like the kiosk) to create time log events
+      allow create: if true; 
+      allow update, delete: if isAppAdmin();
+    }
+
+    // Default authenticated user access
+    match /{document=**} {
+      // For most collections, only allow access to authenticated users
+      // This is a fallback rule. More specific rules above take precedence.
+      allow read, write: if request.auth != null && isAppAdmin();
+    }
+  }
+}

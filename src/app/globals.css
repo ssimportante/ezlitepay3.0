@@ -1,0 +1,81 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Very Light Cool Gray */
+    --foreground: 215 25% 27%; /* Dark Desaturated Blue for main text */
+    --card: 0 0% 100%; /* White for cards */
+    --card-foreground: 215 25% 27%; /* Dark text for cards */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    --primary: 140 55% 42%; /* Main Green */
+    --primary-foreground: 0 0% 100%; /* White - Text on primary */
+    --secondary: 210 40% 92%; /* Lighter Cool Gray - for subtle backgrounds */
+    --secondary-foreground: 215 25% 27%;
+    --muted: 210 40% 94%; /* Light Muted Gray - for muted text or borders */
+    --muted-foreground: 215 20% 45%;
+    --accent: 30 95% 55%; /* Vibrant Orange - for accents */
+    --accent-foreground: 0 0% 100%; /* White */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 30% 88%; /* Light gray border */
+    --input: 210 30% 95%; /* Slightly lighter than secondary for input fields */
+    --ring: 140 55% 42%; /* Main Green for focus rings */
+    --chart-1: 140 55% 42%; /* Green */
+    --chart-2: 211 100% 50%; /* Blue */
+    --chart-3: 30 80% 55%; /* Orange */
+    --chart-4: 280 65% 60%; /* Purple */
+    --chart-5: 340 75% 55%; /* Pink/Red */
+    --radius: 0.75rem;
+
+    /* Sidebar specific variables - Dark Blue Theme for #0d203b */
+    --sidebar-background: 215 65% 14%;    /* Dark Blue #0d203b */
+    --sidebar-foreground: 0 0% 95%;        /* Light Gray/White text for high contrast */
+    --sidebar-primary: 140 55% 42%;        /* Green for active item background */
+    --sidebar-primary-foreground: 0 0% 100%;/* White text/icon for active item */
+    --sidebar-accent: 215 65% 20%;          /* Slightly Lighter Dark Blue for hover background */
+    --sidebar-accent-foreground: 0 0% 98%; /* White text on hover */
+    --sidebar-border: 215 65% 10%;          /* Darker Blue border */
+    --sidebar-ring: 140 55% 42%;          /* Green focus ring */
+  }
+
+  .dark {
+    /* Default dark theme for main app, if ever enabled globally */
+    /* These will NOT apply to the sidebar if the sidebar always uses the --sidebar- vars */
+    --background: 215 25% 15%;
+    --foreground: 210 40% 98%;
+    --card: 215 25% 18%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 25% 18%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 140 55% 48%; /* Adjusted for dark mode */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 20% 25%;
+    --muted-foreground: 210 30% 70%;
+    --accent: 30 95% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 20% 30%;
+    --input: 215 20% 30%;
+    --ring: 140 55% 48%; /* Adjusted for dark mode */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

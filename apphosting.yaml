@@ -1,0 +1,8 @@
+# apphosting.yaml
+# This file configures the build and runtime settings for Firebase App Hosting.
+
+# Specifies the Next.js framework.
+framework: nextjs
+
+# Specifies the source directory of the app.
+source: ./

@@ -1,0 +1,21 @@
+{
+  "name": "EZLitePay Kiosk",
+  "short_name": "Kiosk",
+  "description": "EZLitePay Time Clock Kiosk",
+  "start_url": "/kiosk",
+  "display": "standalone",
+  "background_color": "#0d203b",
+  "theme_color": "#0d203b",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/QjnMdhf/App-Logo-v1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/QjnMdhf/App-Logo-v1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
